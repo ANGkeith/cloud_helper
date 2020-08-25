@@ -1,11 +1,14 @@
 #!/bin/bash
 
+mkdir -p ./data/nginx/conf.d
+touch ./data/nginx/conf.d/default.conf
+
 if ! [ -x "$(command -v docker-compose)" ]; then
   echo 'Error: docker-compose is not installed.' >&2
   exit 1
 fi
 
-domains=(example.org www.example.org)
+domains=(example.com)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="" # Adding a valid address is strongly recommended
